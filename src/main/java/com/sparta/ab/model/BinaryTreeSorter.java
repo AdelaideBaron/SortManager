@@ -6,7 +6,7 @@ public class BinaryTreeSorter implements BinaryTree, Sorts {
         private final int value;
         private Node leftChild;
         private Node rightChild;
-        public Node(int value) { //not including leftC& rightC as not everynode has one
+        public Node(int value) {
             this.value = value;
         }
         public int getValue() { return value; }
@@ -23,11 +23,11 @@ public class BinaryTreeSorter implements BinaryTree, Sorts {
     }
 
     private Node rootNode;
-    // int rootNodeValue;
+
     private int[] arraySortedByTree;
     private int arrayIndex = 0;
-    private int count;
-    private int amountOfNodes = 1; //instantiating as it must have the root node minimum
+
+    private int amountOfNodes = 1;
 
 
     public BinaryTreeSorter(final int element) {
@@ -36,8 +36,7 @@ public class BinaryTreeSorter implements BinaryTree, Sorts {
 
 
     public int[] getSortedArray(int[] unorderedArray, int arraySize) {
-        // int unorderedArrayNought = unorderedArray[0];
-        BinaryTreeSorter tree = new BinaryTreeSorter(unorderedArray[0]);
+              BinaryTreeSorter tree = new BinaryTreeSorter(unorderedArray[0]);
         for( int i =1; i< unorderedArray.length; i++){
             tree.addElement(unorderedArray[i]);
         }
@@ -183,7 +182,7 @@ public class BinaryTreeSorter implements BinaryTree, Sorts {
         }
     }
 
-    private int getLeftChildOfNode(int element) throws ChildNotFoundException { //inprogress
+    private int getLeftChildOfNode(int element) throws ChildNotFoundException {
         boolean t = true;
         boolean f = false;
         int leftchild = 0;
@@ -197,7 +196,7 @@ public class BinaryTreeSorter implements BinaryTree, Sorts {
         return leftchild;
     }
 
-    private int getRightChildOfNode(int element) throws ChildNotFoundException { //inprogress
+    private int getRightChildOfNode(int element) throws ChildNotFoundException {
         boolean t = true;
         boolean f = false;
         int rightChild = 0;

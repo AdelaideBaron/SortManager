@@ -42,7 +42,7 @@ public class BubbleSorter implements Sorts{
 
     private static void sorter(int[] array, int arrayLength) {
         for (int i = 1; i < arrayLength; i++) {
-           // logger.log(Level.INFO, "iterating through comparing sizes");
+
             int numberAtPosition = array[i];
             if (array[i] < array[i - 1]) {
                 array[i] = array[i - 1];
@@ -51,5 +51,4 @@ public class BubbleSorter implements Sorts{
         }
     }
 
-    //add the logging bits too, runtimeExceptionCatcher etc.
 }
