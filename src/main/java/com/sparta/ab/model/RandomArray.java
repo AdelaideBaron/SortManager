@@ -6,8 +6,6 @@ import java.util.Random;
 public class RandomArray {
 
 
-  //  int[] unorderedRandomArray;
-
     public RandomArray() {
     }
 
