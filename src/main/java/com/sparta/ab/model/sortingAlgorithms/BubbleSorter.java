@@ -1,6 +1,6 @@
-package com.sparta.ab.model;
+package com.sparta.ab.model.sortingAlgorithms;
 
-public class BubbleSorter implements Sorts{
+public class BubbleSorter implements Sorts {
 
     public BubbleSorter() {
     }

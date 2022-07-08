@@ -2,12 +2,56 @@ package com.sparta.ab.view;
 
 import java.util.Scanner;
 
-public class InputMessages {
+public class ProgramStartMessages {
 
-    public InputMessages() {
+    public ProgramStartMessages() {
     }
 
+    public int startProgram(){
+        System.out.println("*** Sort Manager ***");
+        System.out.println("\n");
+        System.out.println("Please enter 1 to begin ");
 
+        Scanner getkey = new Scanner(System.in);
+        int key = Integer.parseInt(getkey.nextLine());
+        return key;
+    }
+
+    public int rerunProgram(){
+        System.out.println("Enter 1 to restart, enter anything else to stop");
+        Scanner getKey = new Scanner(System.in);
+        int key;
+        String keyInput = getKey.nextLine();
+        boolean isKeyInt = isKeyInt(keyInput);
+        return keyValue(keyInput);
+    }
+
+    private int keyValue(String keyInput) {
+        int key;
+        boolean isKeyInt = isKeyInt(keyInput);
+        if (isKeyInt){
+            Integer.parseInt(keyInput);
+            if(Integer.parseInt(keyInput) == 1){
+                key = 1;
+            } else{
+                key = 0;
+            }
+            return key;
+        } else{
+            key = 0;
+            return key;
+        }
+    }
+
+    public boolean isKeyInt(String keyInput){
+            try {
+                Integer.parseInt(keyInput);
+                return true;
+            } catch (NumberFormatException ex) {
+                return false;
+            }
+
+    }
 
     public void menuDisplayer(){
         String optionOne = "Bubble Sort";

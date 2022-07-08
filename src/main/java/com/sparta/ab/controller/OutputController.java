@@ -1,10 +1,10 @@
-package com.sparta.ab.view;
+package com.sparta.ab.controller;
 
 
 import com.sparta.ab.controller.MenuSwitch;
 import com.sparta.ab.model.RandomArray;
-
-import java.util.Arrays;
+import com.sparta.ab.view.OutputMessages;
+import com.sparta.ab.view.ProgramStartMessages;
 
 
 public class OutputController
@@ -22,18 +22,16 @@ public class OutputController
         int arraySize;
         int range = 1;
         int menuChoice;
-        InputMessages newInput = new InputMessages();
+        ProgramStartMessages programStart = new ProgramStartMessages();
         RandomArray myArray = new RandomArray();
 
-        System.out.println("\n");
-        System.out.println("*** Sort Manager ***");
-        arraySize = newInput.getArraySize();
-        range = newInput.getRandomLimit();
+        arraySize = programStart.getArraySize();
+        range = programStart.getRandomLimit();
 
         int[] arrayToSort = myArray.unorderedArray(arraySize, range);
 
-        newInput.menuDisplayer();
-        menuChoice = newInput.getMenuChoice();
+        programStart.menuDisplayer();
+        menuChoice = programStart.getMenuChoice();
 
         output(arraySize, arrayToSort, menuChoice);
     }
@@ -41,15 +39,11 @@ public class OutputController
 
     private static void output(int arraySize, int[] arrayToSort, int menuChoice) {
         //move the below into output
-
+        OutputMessages newOutput = new OutputMessages();
         MenuSwitch chooseAlgorithm = new MenuSwitch();
 
-        System.out.println("Unsorted Array: ");
-        System.out.println(Arrays.toString(arrayToSort));
-        System.out.println("Sorted Array: ");
+        newOutput.endOfProgramUnsortedArrayPrinter(arrayToSort);
         chooseAlgorithm.getSortedArray(menuChoice, arraySize, arrayToSort);
-
-        OutputMessages newOutput = new OutputMessages();
         newOutput.chosenMenuChoiceDisplayer(menuChoice);
     }
 

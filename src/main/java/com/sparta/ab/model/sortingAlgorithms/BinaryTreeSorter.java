@@ -1,4 +1,4 @@
-package com.sparta.ab.model;
+package com.sparta.ab.model.sortingAlgorithms;
 
 public class BinaryTreeSorter implements BinaryTree, Sorts {
 
@@ -113,7 +113,7 @@ public class BinaryTreeSorter implements BinaryTree, Sorts {
     }
 
     @Override
-    public int getLeftChild(final int element) throws ChildNotFoundException{
+    public int getLeftChild(final int element) throws ChildNotFoundException {
         return getLeftChildOfNode(element);
 
     }

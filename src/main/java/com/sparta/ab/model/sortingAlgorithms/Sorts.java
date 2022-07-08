@@ -1,4 +1,4 @@
-package com.sparta.ab.model;
+package com.sparta.ab.model.sortingAlgorithms;
 
 public interface Sorts {
 

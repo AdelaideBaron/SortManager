@@ -1,4 +1,4 @@
-package com.sparta.ab.model;
+package com.sparta.ab.model.sortingAlgorithms;
 
 public class ChildNotFoundException extends Exception{
     private String message;

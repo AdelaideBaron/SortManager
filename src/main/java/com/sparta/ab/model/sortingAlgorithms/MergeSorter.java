@@ -1,6 +1,6 @@
-package com.sparta.ab.model;
+package com.sparta.ab.model.sortingAlgorithms;
 
-public class MergeSorter implements Sorts{
+public class MergeSorter implements Sorts {
 
     public MergeSorter() {
     }
@@ -24,12 +24,6 @@ public class MergeSorter implements Sorts{
         return 0;
     }
 
-    public static void main(String[] args) {
-        int[] arrayToSort = { 5, 1, 6, 2, 3, 4 };
-        mergeSort(arrayToSort, arrayToSort.length);
-        for (int i = 0; i < arrayToSort.length; i++)
-            System.out.println(arrayToSort[i]);
-    }
 
     public static int[] mergeSort(int[] arrayToSort, int arraySize) {
         if (arraySize >= 2) {

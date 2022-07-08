@@ -1,11 +1,14 @@
 package com.sparta.ab.controller;
 
-import com.sparta.ab.model.BinaryTreeSorter;
-import com.sparta.ab.model.BubbleSorter;
-import com.sparta.ab.model.MergeSorter;
+import com.sparta.ab.model.sortingAlgorithms.BinaryTreeSorter;
+import com.sparta.ab.model.sortingAlgorithms.BubbleSorter;
+import com.sparta.ab.model.sortingAlgorithms.MergeSorter;
+import com.sparta.ab.view.OutputMessages;
 
 import java.util.Arrays;
 public class MenuSwitch {
+
+    public static OutputMessages newOutput;
     public MenuSwitch() {
     }
 
@@ -16,24 +19,18 @@ public class MenuSwitch {
 
     private static String menuChoiceInput(int menuChoice, int arraySize, int[] arrayToSort) {
 
+        newOutput = new OutputMessages();
+
         switch (menuChoice){
             case 1:
-                BubbleSorter bubble = new BubbleSorter();
-                System.out.println(Arrays.toString(bubble.getSortedArray(arrayToSort, 0)));
-                System.out.println("Time taken: ");
-                System.out.println(bubble.timeTaken(arrayToSort) + " nanoseconds");
+                newOutput.bubblePrinter(arrayToSort);
                 break;
             case 2:
-                BinaryTreeSorter tree = new BinaryTreeSorter(arrayToSort[0]);
-                System.out.println(Arrays.toString(tree.getSortedArray(arrayToSort, arraySize)));
-                System.out.println("Time taken: ");
-                System.out.println(tree.timeTaken(arrayToSort, arraySize) + " nanoseconds");
+                newOutput.binaryTreePrinter(arrayToSort, arraySize);
                 break;
             case 3:
-                MergeSorter merger = new MergeSorter();
-                System.out.println(Arrays.toString(merger.getSortedArray( arrayToSort, arraySize)));
-                System.out.println("Time taken: ");
-                System.out.println(merger.timeTaken(arrayToSort, arraySize) + " nanoseconds");
+                newOutput.mergePrinter(arrayToSort, arraySize);
+                break;
         }
         return null;
     }

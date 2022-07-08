@@ -1,11 +1,14 @@
 package com.sparta.ab;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import com.sparta.ab.model.BubbleSorter;
+import com.sparta.ab.model.sortingAlgorithms.BubbleSorter;
 
 public class BubbleSortTest {
+
+    
 
     @Test
     @DisplayName("Check that an array of integers is output")
